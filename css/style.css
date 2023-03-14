@@ -228,6 +228,8 @@ section div.container, section div.col-container{
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
+    position: relative;
+    align-items: center;
 }
 
 div.accordion  li  p {
@@ -240,9 +242,30 @@ div.accordion  li  p {
     line-height: 1.5;
     letter-spacing: 0.2px;
 }
-
+.img-comp{
+    position: relative;
+}
+.img-comp> img{
+    position: absolute;
+}
+.rotate{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
 .accordion-content{
     display: none;
+}
+.accordion-text{
+    font-family: Oxygen;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
 }
 
 /* Button */

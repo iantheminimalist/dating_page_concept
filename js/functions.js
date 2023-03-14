@@ -1,9 +1,11 @@
 $(document).ready(function () {
     // accordion functionality 
-    $('.accordion-menu ,.accordion-menu p, .accordion-menu img').click(function(){
+    $('.accordion-menu ,.accordion-menu p, .accordion-menu img').click(function(e){
+      e.preventDefault();
         $(this).parent().next(".accordion-content").slideToggle();
         $(this).parent().parent().closest('li').siblings().find('.accordion-content').slideUp();
-      }); 
+
+      }).one()
 });
 $(function () {
     $(".tabs li").click(function (g) {
@@ -29,11 +31,7 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-  
-    console.log("length: " + slides.length)
-    console.log("dots: " + dots.length)
 
-    console.log(n)
     
     if(n < 1){
         console.log(n)
