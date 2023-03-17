@@ -1,12 +1,32 @@
-$(document).ready(function () {
+$(document).ready(function (e) {
+
     // accordion functionality 
-    $('.accordion-menu ,.accordion-menu p, .accordion-menu img').click(function(e){
+    $('.accordion-menu p ').on( 'click', function(e){
       e.preventDefault();
+        var currentSrc = $(this.nextElementSibling).addClass('open').attr('src');
         $(this).parent().next(".accordion-content").slideToggle();
         $(this).parent().parent().closest('li').siblings().find('.accordion-content').slideUp();
+        
+        
+        let rest = $(this).children()
+        console.log(rest)
+        
+        if (currentSrc == "./assets/plus-circle-line.svg") {
+          $('.img-class.open').attr("src", "/assets/minus-circle-line.svg");
+        }else if( currentSrc == "/assets/minus-circle-line.svg"){
+          $('.img-class.open').removeClass('open').attr("src", "/assets/plus-circle-line.svg");
+        }
+
+        
+        
+        var test = $('.img-class')
+
+        console.log(test)
 
       }).one()
-});
+}, 0);
+
+
 $(function () {
     $(".tabs li").click(function (g) {
         var tab = $(this).closest(".tab"),
@@ -31,18 +51,14 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-
-    
     if(n < 1){
         console.log(n)
         n = slides.length + 3
         console.log(n)
     }
-
     if (n > slides.length){
         console.log(n)
         n = 1;
-
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -55,15 +71,12 @@ function showSlides(n) {
         slides[n-1].style.display = "block";  
         dots[n-1].className += " active";
     }
-
-    
-
   }
+
   function currentSlide(n) {
     showSlides(n = n);
     console.log(n)
   }
-
 
   $(document).ready(function() {
 
@@ -103,3 +116,4 @@ function showSlides(n) {
     let slideIndex = 1;
     showSlides(slideIndex); 
 });
+

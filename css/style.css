@@ -230,6 +230,7 @@ section div.container, section div.col-container{
     cursor: pointer;
     position: relative;
     align-items: center;
+    z-index: 5;
 }
 
 div.accordion  li  p {
@@ -709,8 +710,15 @@ section.section-out{
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-
+@media only screen and (max-width: 400px) {
+    .list-title {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 2.125rem;
+        letter-spacing: normal;
+        text-align: left;
+        color: #2c2820;
+      }
 }
 
 /****************************************************************************/
